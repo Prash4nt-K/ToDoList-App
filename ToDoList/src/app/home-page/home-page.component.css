@@ -1,0 +1,15 @@
+.btn-circle.btn-sm {
+    width: 40px;
+    height: 40px;
+    padding: 6px 0px;
+    border-radius: 25px;
+    font-size: 8px;
+    text-align: center;
+    background-color: #1B4D3E;;
+}
+
+.list {  
+    margin: 5px;
+    height: 3rem;
+    width: 25rem;
+}

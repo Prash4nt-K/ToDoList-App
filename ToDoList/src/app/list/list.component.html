@@ -1,0 +1,63 @@
+<nav class="navbar navbar-dark" style="margin-bottom: 10px;">
+    <div class="d-flex justify-content-start">
+        <button  type="button"  class="btn btn-success d-flex justify-content-end" routerLink="/">Back</button>
+    </div>
+    <div class="d-flex justify-content-center">
+        <p class="navbar-brand h3">{{listName}}</p>
+    </div>
+    <div class="d-flex justify-content-end">
+        <button  type="button"  class="btn btn-success d-flex justify-content-end" (click)="deleteList()">Delete</button>
+    </div>
+</nav>
+
+
+
+<div class="container" style="margin-bottom: 30px;">
+    <div class="row d-flex justify-content-center">
+        
+        <div class="p-2 row rounded d-flex justify-content-center">
+                
+            
+                <div class="col">
+                    <label class="p4" style="color: #1B4D3E; padding: 10px;">Add Task</label>
+                </div>
+                <div class="col">
+                    <input class="form-control" placeholder="Enter task here..." type="text" [(ngModel)]="taskName">
+                </div>
+                <div class="col">
+                    <button class="btn btn-success" style="margin-left: 5px;" (click)="submitTask()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                        <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="w-100"></div>
+
+                <div *ngIf="nameError" class="d-flex justify-content-center text-danger">Task name cannot be empty!</div>
+                <div *ngIf="taskPresent" class="d-flex justify-content-center text-danger">Task with same name already exists!</div>
+            
+            
+        </div>    
+
+    </div>
+</div>
+
+
+<div class="container" style="padding: 20px;">
+    <div *ngFor="let at of alltasks; let index = index" class="row d-flex justify-content-center card text-white bg-success task" style="margin: 2px;">
+
+        <div class=" col d-flex justify-content-center">
+             <h5 class="card-title">{{at}}</h5>
+        </div>   
+
+        <button type="button" class="col-2 btn btn-danger btnStyle" style="width: 4rem; margin-left: 9px; background-color: #E52B50;" (click)="deleteTask(index)">Done
+        </button>
+           
+    </div>
+
+</div>
+
+
+
+
